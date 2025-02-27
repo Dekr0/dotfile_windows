@@ -1,0 +1,15 @@
+[user]
+	email = dekr0.dk@protonmail.com
+	name = Dekr0
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	st-short = status -s
+	ls-mod = ls-files --modified --deduplicate
+	ls-del = ls-files --deleted --deduplicate
+	ls-untrack = ls-files --other --deduplicate
+	ls-std = ls-files --modified --deleted --other --exclude-standard --deduplicate
+[core]
+	editor = nvim
