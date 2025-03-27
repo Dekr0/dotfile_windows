@@ -1,3 +1,4 @@
+BurntSushi.ripgrep
 clang
 cmake
 ffmpeg
@@ -5,6 +6,7 @@ fzf
 git
 go
 komorebi
+lazygit
 lf
 neovim
 node.js

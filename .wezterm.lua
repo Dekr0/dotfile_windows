@@ -3,12 +3,12 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 config.font = wezterm.font {
-    family = 'JetBrains Mono',
+    family = 'Iosevka',
     weight = 'Regular',
     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
 }
 
-config.color_scheme = 'Gruvbox Dark (Gogh)'
+config.color_scheme = 'Solarized (dark) (terminal.sexy)'
 
 config.default_prog = { 'powershell.exe', '-NoLogo' }
 

@@ -10,14 +10,14 @@ local gopls = {
 
 local pyright = {}
 
-local omnisharp = {
-    cmd = { 
-        "C:\\omnisharp\\Omnisharp.exe",
-        "--languageserver",
-        "--hostPID",
-        tostring(pid)
-    }
-}
+-- local omnisharp = {
+--     cmd = { 
+--         "C:\\omnisharp\\Omnisharp.exe",
+--         "--languageserver",
+--         "--hostPID",
+--         tostring(pid)
+--     }
+-- }
 
 -- [[ Section end ]]
 
@@ -55,7 +55,9 @@ return {
             lspconfig.ts_ls.setup({
                 filetypes = {
                     "javascript",
-                    "typescript"
+                    "typescript",
+                    "typescriptreact",
+                    "typescript.tsx"
                 }
             })
 

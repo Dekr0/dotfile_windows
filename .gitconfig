@@ -11,5 +11,11 @@
 	ls-del = ls-files --deleted --deduplicate
 	ls-untrack = ls-files --other --deduplicate
 	ls-std = ls-files --modified --deleted --other --exclude-standard --deduplicate
+
+[safe]
+	directory = I:\\secondary_os_shared\\notebook\\
+	directory = I:/secondary_os_shared/notebook
 [core]
 	editor = nvim
+[gui]
+	recentrepo = D:/codebase/hd2-audio-modder

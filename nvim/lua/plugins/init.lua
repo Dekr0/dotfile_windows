@@ -6,6 +6,17 @@ return {
     -- },
 
     {
+        "LunarVim/bigfile.nvim",
+        event = "BufReadPre",
+        opts = {
+            filesize = 2
+        },
+        config = function (_, opts)
+            require("bigfile").setup(opts)
+        end
+    },
+
+    {
         "cohama/lexima.vim",
         lazy = false,
     },
@@ -27,10 +38,20 @@ return {
                 find_files = {
                     disable_devicons = true
                 }
+            },
+            file_ignore_patterns = {
+                ".git",
+                ".venv"
             }
         },
         lazy = true
     },
+
+    -- fzf
+    -- {
+    --     'ibhagwan/fzf-lua',
+    --     opts = {}
+    -- },
 
     -- undo tree
     {
