@@ -8,7 +8,9 @@ config.font = wezterm.font {
     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
 }
 
-config.color_scheme = 'Solarized (dark) (terminal.sexy)'
+config.window_padding = { left = 0, right = 0, top = 0, bottom = 0}
+
+config.color_scheme = 'zenbones_dark'
 
 config.default_prog = { 'powershell.exe', '-NoLogo' }
 
@@ -36,22 +38,22 @@ config.keys = {
         action = wezterm.action.ActivateTab(4)
     },
     {
-        key = "j",
+        key = "k",
         mods = "CTRL",
         action = wezterm.action.ActivatePaneDirection("Left")
     },
     {
-        key = "k",
+        key = "j",
         mods = "CTRL",
         action = wezterm.action.ActivatePaneDirection("Right")
     },
     {
-        key = "h",
+        key = "k",
         mods = "CTRL|SHIFT",
         action = wezterm.action.ActivateTabRelative(-1)
     },
     {
-        key = "l",
+        key = "j",
         mods = "CTRL|SHIFT",
         action = wezterm.action.ActivateTabRelative(1)
     },
@@ -64,8 +66,27 @@ config.keys = {
         key = ".",
         mods = "CTRL|SHIFT",
         action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" })
+    },
+    {
+        key = "t",
+        mods = "CTRL|ALT|SHIFT",
+        action = wezterm.action.PromptInputLine {
+            description = "Enter new name for tab",
+            action = wezterm.action_callback(function(window, pane, line)
+                if line then
+                    window:active_tab():set_title(line)
+                end
+            end)
+        },
+    },
+    {
+        key = "f",
+        mods = "CTRL|ALT",
+        action = wezterm.action.SpawnCommandInNewTab {
+            args   = { "shutil", "--wezterm-fzf-tab" },
+            domain = "DefaultDomain"
+        }
     }
 }
-
 
 return config

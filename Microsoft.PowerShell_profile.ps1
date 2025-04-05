@@ -7,6 +7,7 @@ Set-Alias -Name vim -Value nvim
 function sync_dotfiles() {
     cp $HOME/.wezterm.lua $DOTFILE -Recurse -force
     cp $HOME/.gitconfig $DOTFILE -Recurse -force
+    cp $HOME/.shutil.json $DOTFILE -force
     cp $PROFILE $DOTFILE -Recurse -force
     cp $HOME/komorebi.json $DOTFILE -Recurse -force
     cp $HOME/komorebi.bar.json $DOTFILE -Recurse -force
@@ -32,7 +33,7 @@ Set-PSReadLineKeyHandler -Chord Alt+c -ScriptBlock {
 }
 
 Set-PSReadLineKeyHandler -Chord Alt+j -ScriptBlock {
-    cd $(shutil --walker --walker-depth 3 --walker-worker 0 "D:/codebase/hd2_asset_db" "D:/sfx_spec" "D:/codebase/migration/hd2-audio-modder" "D:/sfx")
+    cd $(shutil --walker)
 }
 
 Set-PSReadLineKeyHandler -Chord Alt+r -ScriptBlock {

@@ -1,1 +1,1 @@
-return require("plugins.theme.solarized")
+return require("plugins.theme.mono")
